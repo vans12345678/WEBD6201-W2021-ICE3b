@@ -6,7 +6,10 @@
 
 "use strict";
 
+//namespace core
 
+
+console.log(myDocument);
 ((core) =>
 {
     function displayHome()
@@ -115,7 +118,7 @@
         sendButton.addEventListener("click", function(event){
             //event.preventDefault();
             
-            let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
+            let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
 
             if(contact.serialize())
             {
@@ -137,7 +140,7 @@
         {
           let contactData = localStorage.getItem((index + 1).toString());
 
-          let contact = new core.Contact();
+          let contact = new Contact();
           contact.deserialize(contactData);
 
           data += `<tr>

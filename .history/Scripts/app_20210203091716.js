@@ -5,24 +5,15 @@
 //Closure - limits scope leak
 
 "use strict";
+let myPage = $(document).ready(function()
+{
+  console.log("Document is Ready!");
 
-
-((core) =>
+});
+(function()
 {
     function displayHome()
     {
-      $("button").on("mouseover", () =>{
-        console.log("mouse over - jquery");
-      });
-      let myButton = document.querySelectorAll("button")[0];     
-      myButton.addEventListener("click", () =>
-      {
-        console.log("clicked button - js");
-      })
-
-      console.log(myButton);
-
-
         let paragraphOneText =
           "This is a simple site to demonstrate DOM Manipulation for ICE 1";
 
@@ -115,7 +106,7 @@
         sendButton.addEventListener("click", function(event){
             //event.preventDefault();
             
-            let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
+            let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
 
             if(contact.serialize())
             {
@@ -137,7 +128,7 @@
         {
           let contactData = localStorage.getItem((index + 1).toString());
 
-          let contact = new core.Contact();
+          let contact = new Contact();
           contact.deserialize(contactData);
 
           data += `<tr>
@@ -184,6 +175,4 @@
 
     window.addEventListener("load", Start);
 
-    core.Start = Start;
-
-}) (core || (core={}));
+})();

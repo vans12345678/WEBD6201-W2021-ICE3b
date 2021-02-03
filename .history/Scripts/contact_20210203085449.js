@@ -1,9 +1,6 @@
 "use strict";
 // Contact Class
-
-((core)=>
-{
-  class Contact {
+class Contact {
     // getters and setters
     get FullName() 
     {
@@ -107,9 +104,3 @@
       this.EmailAddress = propertyArray[2];
     }
   }
-
-  core.Contact = Contact;
-  
-})(core || (core={}));
-
-
