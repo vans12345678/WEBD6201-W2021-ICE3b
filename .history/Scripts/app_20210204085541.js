@@ -109,23 +109,16 @@
             }
         });
 
-        $("#subscribeCheckBox").on("change", function(){
-            console.log("checkbox checked!")
-          });
-
         let sendButton = document.getElementById("sendButton");
-        $("#sendButton").on("click", (event)=>{
-          
-          if( $("#subscribeCheckBox")[0].checked)
-          {
+        sendButton.addEventListener("click", function(event){
+            //event.preventDefault();
+            
             let contact = new core.Contact(fullName.value, contactNumber.value, emailAddress.value);
 
             if(contact.serialize())
             {
               localStorage.setItem((localStorage.length + 1).toString(), contact.serialize());
             }
-          }
-          // document.getElementById("subscribeCheckBox").addEventListener();
            
         });
     }
