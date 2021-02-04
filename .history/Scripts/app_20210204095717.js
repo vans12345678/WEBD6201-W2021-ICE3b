@@ -150,31 +150,25 @@
           <td>${contact.FullName}</td>
           <td>${contact.ContactNumber}</td>
           <td>${contact.EmailAddress}</td>
-          <td class="text-center"><button value= "${index + 1}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i>Edit</button></td>
-          <td class= "text-center"><button value= "${index + 1}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i>Delete</button></td>
+          <td class="text-center"><button data= "${index + 1}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i>Edit</button></td>
+          <td class= "text-center"><button data= "${index + 1}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i>Delete</button></td>
           </tr>`;
 
         }
         
 
         contactList.innerHTML = data;
-
-        //TODO - need to create an edit page
+        
         $("button.edit").on("click", function(){
           console.log($(this).val());
-         });
-
-         //TODO - need to fix this item - it breaks when we delete a middle item
-         $("button.delete").on("click", function(){
-          if(confirm("Are you sure?"))
-          {
-           localStorage.removeItem($(this).val());
-           location.href = "contact-list.html"; // refresh the page
-          }
         });
-          
-        }
+
+        $("button.delete").on("click", function(){
+          localStorage.removeItem($(this).val());
+          location.href = "contact-list.html"; //refresh the page
+        });
       }
+    }
 
      
 
