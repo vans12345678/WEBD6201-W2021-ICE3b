@@ -90,23 +90,24 @@
 
     function displayContact()
     {
-
-      let messageArea = $("#messageArea").hide();
         $("#messageArea").hide();
 
         // form validation
-        $("#fullName").on("blur", function()
+        $("#fullName").on("blur", () =>
         {
-            if($(this).val().length < 2)
+            if($("#fullName").val().length < 2)
             {
-              $(this).trigger("focus");
+              $("#fullName").trigger("focus");
               $("#fullName").trigger("select");
 
-              messageArea.show(500).addClass("alert alert-danger").text("Please enter an appropriate Name");
+              $("#messageArea").show();
+              $("#messageArea").addClass("alert alert-danger");
+              $("#messageArea").text("Please enter an appropriate Name");
             }
             else
             {
-              messageArea.removeAttr("class").hide();
+              $("#messageArea").removeAttr("class");
+              $("#messageArea").hide();
             }
         });
 

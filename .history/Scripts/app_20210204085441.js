@@ -102,7 +102,9 @@
               $(this).trigger("focus");
               $("#fullName").trigger("select");
 
-              messageArea.show(500).addClass("alert alert-danger").text("Please enter an appropriate Name");
+              messageArea.show(1000).addClass("alert alert-danger").text("Please enter an appropriate Name");
+              $("#messageArea")
+              $("#messageArea")
             }
             else
             {

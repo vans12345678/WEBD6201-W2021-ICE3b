@@ -103,6 +103,8 @@
               $("#fullName").trigger("select");
 
               messageArea.show(500).addClass("alert alert-danger").text("Please enter an appropriate Name");
+              $("#messageArea")
+              $("#messageArea")
             }
             else
             {
